@@ -1,0 +1,47 @@
+﻿@page
+@model BaseDeDatosDinamicas.Pages.ManageUsersModel
+@{
+    ViewData["Title"] = "Gestión de Usuarios";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Gestión de Usuarios y Permisos</h2>
+
+    <form method="post" class="card p-4 shadow">
+        <div class="mb-3">
+            <label asp-for="UserModel.Username" class="form-label">Nombre de Usuario</label>
+            <input asp-for="UserModel.Username" class="form-control" placeholder="Ingrese el nombre de usuario" />
+            <span asp-validation-for="UserModel.Username" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="UserModel.Password" class="form-label">Contraseña</label>
+            <input asp-for="UserModel.Password" type="password" class="form-control" placeholder="Ingrese la contraseña" />
+            <span asp-validation-for="UserModel.Password" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="UserModel.DatabaseName" class="form-label">Base de Datos</label>
+            <input asp-for="UserModel.DatabaseName" class="form-control" placeholder="Ingrese el nombre de la base de datos" />
+            <span asp-validation-for="UserModel.DatabaseName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="UserModel.Permissions" class="form-label">Permisos</label>
+            <select asp-for="UserModel.Permissions" class="form-control">
+                <option value="READ">Lectura</option>
+                <option value="WRITE">Escritura</option>
+                <option value="ADMIN">Administrador</option>
+            </select>
+            <span asp-validation-for="UserModel.Permissions" class="text-danger"></span>
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg">Crear Usuario</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

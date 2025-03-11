@@ -1,0 +1,67 @@
+﻿@page
+@model BaseDeDatosDinamicas.Pages.CreateDatabaseModel
+@{
+    ViewData["Title"] = "Crear Base de Datos";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Crear Base de Datos</h2>
+
+    <form method="post" class="card p-4 shadow">
+        <div class="mb-3">
+            <label asp-for="DatabaseModel.NombreDB" class="form-label">Nombre de la Base de Datos</label>
+            <input asp-for="DatabaseModel.NombreDB" class="form-control" placeholder="Ingrese el nombre de la base de datos" />
+            <span asp-validation-for="DatabaseModel.NombreDB" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DatabaseModel.RutaMDF" class="form-label">Ruta del Archivo MDF</label>
+            <input asp-for="DatabaseModel.RutaMDF" class="form-control" placeholder="Ejemplo: C:\SQLData\MiBaseDeDatos.mdf" />
+            <span asp-validation-for="DatabaseModel.RutaMDF" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DatabaseModel.TamanioInicialMDF" class="form-label">Tamaño Inicial del Archivo de Datos (MB)</label>
+            <input asp-for="DatabaseModel.TamanioInicialMDF" class="form-control" placeholder="Ejemplo: 100" />
+            <span asp-validation-for="DatabaseModel.TamanioInicialMDF" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DatabaseModel.CrecimientoMDF" class="form-label">Crecimiento del Archivo de Datos (MB)</label>
+            <input asp-for="DatabaseModel.CrecimientoMDF" class="form-control" placeholder="Ejemplo: 10" />
+            <span asp-validation-for="DatabaseModel.CrecimientoMDF" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DatabaseModel.TamanioMaximoMDF" class="form-label">Tamaño Máximo del Archivo de Datos (MB)</label>
+            <input asp-for="DatabaseModel.TamanioMaximoMDF" class="form-control" placeholder="Ejemplo: 500" />
+            <span asp-validation-for="DatabaseModel.TamanioMaximoMDF" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DatabaseModel.RutaLDF" class="form-label">Ruta del Archivo LDF</label>
+            <input asp-for="DatabaseModel.RutaLDF" class="form-control" placeholder="Ejemplo: C:\SQLLogs\MiBaseDeDatos_log.ldf" />
+            <span asp-validation-for="DatabaseModel.RutaLDF" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DatabaseModel.TamanioInicialLDF" class="form-label">Tamaño Inicial del Archivo de Logs (MB)</label>
+            <input asp-for="DatabaseModel.TamanioInicialLDF" class="form-control" placeholder="Ejemplo: 50" />
+            <span asp-validation-for="DatabaseModel.TamanioInicialLDF" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DatabaseModel.CrecimientoLDF" class="form-label">Crecimiento del Archivo de Logs (MB)</label>
+            <input asp-for="DatabaseModel.CrecimientoLDF" class="form-control" placeholder="Ejemplo: 5" />
+            <span asp-validation-for="DatabaseModel.CrecimientoLDF" class="text-danger"></span>
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg">Crear Base de Datos</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
